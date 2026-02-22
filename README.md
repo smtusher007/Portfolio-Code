@@ -11,11 +11,11 @@ Files created:
 How to use
 
 1. Replace the placeholder text (bio, projects, email) with your real info in `index.html`.
-2. Open `d:\UK\Web\portfolio\index.html` in your browser (double-click or right-click → Open with).
+2. Open `index.html` in your browser (double-click or right-click → Open with).
 
 Adding your photo
 
-- To display your photo in the hero section, add an image file named `image.jpeg` into the same folder as `index.html` (that is: `d:\UK\Web\portfolio\image.jpeg`).
+- To display your photo in the hero section, add an image file named `image.jpeg` into the same folder as `index.html`.
 - Recommended: square crop ~800×800px or larger. The layout will scale it down to fit the hero avatar box. Use progressive JPEG or optimized images for best page load speed.
 - If `image.jpeg` is not present or fails to load, the page will show a decorative SVG fallback avatar instead.
 

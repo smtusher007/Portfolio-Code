@@ -1,4 +1,4 @@
-// Lightweight interactivity for the portfolio
+// Chat-style portfolio interactivity
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
@@ -7,50 +7,66 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const data = new FormData(form);
-      const name = data.get('name') || '';
-      const email = data.get('email') || '';
-      const message = data.get('message') || '';
+      const name = (data.get('name') || '').trim();
+      const email = (data.get('email') || '').trim();
+      const message = (data.get('message') || '').trim();
 
-      if (!name.trim() || !email.trim() || !message.trim()) {
+      if (!name || !email || !message) {
         status.textContent = 'Please complete all fields.';
         return;
       }
 
-      // Use mailto to open user's mail client prefilled (no backend required).
       const subject = encodeURIComponent('Portfolio contact from ' + name);
       const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-      const mailto = 'mailto:you@example.com' + '?subject=' + subject + '&body=' + body;
-      // open mail client
-      window.location.href = mailto;
+      const destinationEmail = 'smtusher009@gmail.com';
+      window.location.href = 'mailto:' + destinationEmail + '?subject=' + subject + '&body=' + body;
       status.textContent = 'Opening your mail client...';
     });
   }
 
-  // smooth scrolling for same-page links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', function (e) {
       const target = a.getAttribute('href');
-      if (target.length > 1) {
-        e.preventDefault();
-        const el = document.querySelector(target);
-        if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
-      }
+      if (!target || target.length < 2) return;
+      const el = document.querySelector(target);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
-  // Avatar image loader: show image if provided, otherwise leave SVG fallback visible
+  // Fade messages in as they enter the viewport.
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+    reveals.forEach((item) => observer.observe(item));
+  } else {
+    reveals.forEach((item) => item.classList.add('visible'));
+  }
+
+  // Avatar fallback behavior when image is missing or fails.
   (function avatarLoader() {
-    const avatarImg = document.querySelector('.hero-card .avatar');
-    const avatarFallback = document.querySelector('.hero-card .avatar-fallback');
+    const avatarImg = document.querySelector('.avatar');
+    const avatarFallback = document.querySelector('.avatar-fallback');
     if (!avatarImg || !avatarFallback) return;
 
-    // Initially hide the image until load state is known to prevent flash
     avatarImg.style.display = 'none';
 
     function showImage() {
       avatarFallback.style.display = 'none';
       avatarImg.style.display = 'block';
     }
+
     function showFallback() {
       avatarImg.style.display = 'none';
       avatarFallback.style.display = 'block';
@@ -59,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
     avatarImg.addEventListener('load', showImage);
     avatarImg.addEventListener('error', showFallback);
 
-    // If the browser already attempted to load the image, check its state
     if (avatarImg.complete) {
       if (avatarImg.naturalWidth && avatarImg.naturalHeight) {
         showImage();
