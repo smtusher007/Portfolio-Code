@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>S M Tusher Mustakim - Portfolio Chat</title>
+    <meta
+      name="description"
+      content="Chat-style portfolio of S M Tusher Mustakim - developer, designer, and problem solver."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#hero">S M Tusher Mustakim</a>
+        <nav class="nav" aria-label="Main">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container chat-layout">
+      <aside class="profile-panel" id="hero">
+        <div class="profile-card">
+          <div class="avatar-wrap">
+            <img src="image.jpeg" alt="Photo of S M Tusher Mustakim" class="avatar" />
+            <svg class="avatar-fallback" width="220" height="220" viewBox="0 0 120 120" aria-hidden="true">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0" stop-color="#0ea5e9" />
+                  <stop offset="1" stop-color="#14b8a6" />
+                </linearGradient>
+              </defs>
+              <rect width="120" height="120" rx="20" fill="url(#g)" />
+              <g transform="translate(15,20)" fill="#fff">
+                <circle cx="30" cy="20" r="12" />
+                <rect x="6" y="44" width="48" height="40" rx="6" />
+              </g>
+            </svg>
+          </div>
+          <h1>S M Tusher Mustakim</h1>
+          <p>Frontend-focused developer creating clean and accessible web experiences.</p>
+          <a class="github-link" href="https://github.com/smtusher007/smtusher007" target="_blank" rel="noopener noreferrer">
+            github.com/smtusher007
+          </a>
+        </div>
+      </aside>
+
+      <section class="chat-thread" aria-label="Portfolio conversation">
+        <article class="message message-assistant reveal" id="about">
+          <div class="message-meta">
+            <span class="role">Assistant</span>
+            <span class="time">About Me</span>
+          </div>
+          <h2>Hello, I am S M Tusher Mustakim.</h2>
+          <p>
+            I build websites and interfaces that are fast, accessible, and easy to maintain. My work uses semantic
+            HTML, modern CSS, and lightweight JavaScript with a practical engineering mindset.
+          </p>
+          <p>
+            I focus on responsive layouts, performance improvements, and clear UI behavior so products feel reliable on
+            both desktop and mobile.
+          </p>
+        </article>
+
+        <article class="message message-user reveal">
+          <div class="message-meta">
+            <span class="role">User</span>
+            <span class="time">Prompt</span>
+          </div>
+          <p>Show me your best projects and what they solve.</p>
+        </article>
+
+        <article class="message message-assistant reveal" id="projects">
+          <div class="message-meta">
+            <span class="role">Assistant</span>
+            <span class="time">Projects</span>
+          </div>
+          <h2>Selected Work</h2>
+          <div class="projects-grid">
+            <article class="card">
+              <h3>smtusher007 Repository</h3>
+              <p>
+                A collection of practical frontend projects and experiments covering responsive UI, accessibility, and
+                reusable components.
+              </p>
+              <a href="https://github.com/smtusher007/smtusher007" target="_blank" rel="noopener noreferrer" class="link">
+                View on GitHub
+              </a>
+            </article>
+            <article class="card">
+              <h3>Interface Prototyping</h3>
+              <p>
+                Rapid prototypes for landing pages and dashboard experiences with attention to performance, layout, and
+                interaction quality.
+              </p>
+              <a href="#contact" class="link">Request a demo</a>
+            </article>
+          </div>
+        </article>
+
+        <article class="message message-user reveal">
+          <div class="message-meta">
+            <span class="role">User</span>
+            <span class="time">Prompt</span>
+          </div>
+          <p>What technologies do you use?</p>
+        </article>
+
+        <article class="message message-assistant reveal" id="skills">
+          <div class="message-meta">
+            <span class="role">Assistant</span>
+            <span class="time">Skills</span>
+          </div>
+          <h2>Tech Stack</h2>
+          <ul class="skills">
+            <li>HTML and CSS Architecture</li>
+            <li>JavaScript and DOM Engineering</li>
+            <li>React and Vue Interfaces</li>
+            <li>Node.js and API Integration</li>
+            <li>Accessibility and Performance</li>
+          </ul>
+        </article>
+
+        <article class="message message-assistant reveal" id="contact">
+          <div class="message-meta">
+            <span class="role">Assistant</span>
+            <span class="time">Contact</span>
+          </div>
+          <h2>Let's Work Together</h2>
+          <p>
+            Send a message below or email directly at <a href="mailto:smtusher009@gmail.com">smtusher009@gmail.com</a>.
+          </p>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="Hi, I'd like to discuss a project..." required></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button type="submit" class="btn">Send Message</button>
+              <span id="formStatus" class="form-status" aria-live="polite"></span>
+            </div>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Built by S M Tusher Mustakim</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
