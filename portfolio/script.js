@@ -54,6 +54,25 @@ document.addEventListener('DOMContentLoaded', function () {
     reveals.forEach((item) => item.classList.add('visible'));
   }
 
+  // Typewriter effect for the h2 element in the about me section.
+  const typewriterElement = document.querySelector('.typewriter');
+  if (typewriterElement) {
+    const text = typewriterElement.textContent;
+    typewriterElement.textContent = '';
+    typewriterElement.classList.add('typewriter-cursor');
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        typewriterElement.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 100);
+      } else {
+        typewriterElement.classList.remove('typewriter-cursor');
+      }
+    }
+    type();
+  }
+
   // Avatar fallback behavior when image is missing or fails.
   (function avatarLoader() {
     const avatarImg = document.querySelector('.avatar');
@@ -83,4 +102,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   })();
+
+  // Mouse-tracking spotlight effect
+  document.addEventListener('mousemove', function(e) {
+    document.body.style.setProperty('--x', e.clientX + 'px');
+    document.body.style.setProperty('--y', e.clientY + 'px');
+  });
 });
