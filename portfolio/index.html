@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>S M Tusher Mustakim - Portfolio Chat</title>
+  <meta name="description"
+    content="Chat-style portfolio of S M Tusher Mustakim - developer, designer, and problem solver." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero">S M Tusher Mustakim</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container chat-layout">
+    <aside class="profile-panel" id="hero">
+      <div class="profile-card">
+        <div class="avatar-wrap">
+          <img src="image.jpeg" alt="Photo of S M Tusher Mustakim" class="avatar" />
+          <svg class="avatar-fallback" width="220" height="220" viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#0ea5e9" />
+                <stop offset="1" stop-color="#14b8a6" />
+              </linearGradient>
+            </defs>
+            <rect width="120" height="120" rx="20" fill="url(#g)" />
+            <g transform="translate(15,20)" fill="#fff">
+              <circle cx="30" cy="20" r="12" />
+              <rect x="6" y="44" width="48" height="40" rx="6" />
+            </g>
+          </svg>
+        </div>
+        <h1>S M Tusher Mustakim</h1>
+        <p>Postgraduate Computer Science student at the University of Hull, building full-stack web and software
+          applications with C#, PHP, JavaScript and SQL.</p>
+        <a class="github-link" href="https://github.com/smtusher007/smtusher007" target="_blank"
+          rel="noopener noreferrer">
+          github.com/smtusher007
+        </a>
+      </div>
+    </aside>
+
+    <section class="chat-thread" aria-label="Portfolio conversation">
+      <article class="message message-assistant reveal" id="about">
+        <div class="message-meta">
+          <span class="role">Assistant</span>
+          <span class="time">About Me</span>
+        </div>
+        <h2 class="typewriter">Hello, I am S M Tusher Mustakim.</h2>
+        <p>
+          I'm an MSc Advanced Computer Science student at the University of Hull (expected September 2026), with
+          hands-on experience building full-stack web and software applications. I work across the stack using C#,
+          ASP.NET, PHP, JavaScript and SQL, applying clean code principles, OOP, and Agile practices. I'm actively
+          seeking internship or junior software developer roles where I can contribute to real projects and grow
+          alongside experienced engineers.
+        </p>
+      </article>
+
+      <article class="message message-assistant reveal" id="education">
+        <div class="message-meta">
+          <span class="role">Assistant</span>
+          <span class="time">Education</span>
+        </div>
+        <h2>Education</h2>
+        <p><strong>University of Hull</strong> &mdash; MSc in Advanced Computer Science</p>
+        <p>Expected: September 2026</p>
+        <p><strong>Relevant Modules:</strong> Commercial Development Practice, Component-Based Software Development,
+          Advanced Software Concepts</p>
+      </article>
+
+      <article class="message message-user reveal">
+        <div class="message-meta">
+          <span class="role">User</span>
+          <span class="time">Prompt</span>
+        </div>
+        <p>Show me your best projects and what they solve.</p>
+      </article>
+
+      <article class="message message-assistant reveal" id="projects">
+        <div class="message-meta">
+          <span class="role">Assistant</span>
+          <span class="time">Projects</span>
+        </div>
+        <h2>Selected Work</h2>
+        <div class="projects-grid">
+          <article class="card">
+            <h3>Advanced Tax Processing System</h3>
+            <p class="card-tech">C#, ASP.NET, JavaScript</p>
+            <p>
+              A database-driven tax processing application supporting full CRUD operations, with structured
+              validation, error handling, and dynamic client-side interactions.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Agriculture Domain Web Application</h3>
+            <p class="card-tech">PHP, JavaScript, CSS</p>
+            <p>
+              A web platform to manage agricultural records and workflows, with efficient backend logic,
+              structured database interactions, and responsive design.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Travel Management System</h3>
+            <p class="card-tech">PHP, JavaScript, CSS, SQL</p>
+            <p>
+              A travel management system handling bookings, destinations, and user data, with automated
+              SQL-backed data entry, retrieval, and modular clean code structure.
+            </p>
+          </article>
+        </div>
+      </article>
+
+      <article class="message message-user reveal">
+        <div class="message-meta">
+          <span class="role">User</span>
+          <span class="time">Prompt</span>
+        </div>
+        <p>What technologies do you use?</p>
+      </article>
+
+      <article class="message message-assistant reveal" id="skills">
+        <div class="message-meta">
+          <span class="role">Assistant</span>
+          <span class="time">Skills</span>
+        </div>
+        <h2>Tech Stack</h2>
+        <dl class="skills-grouped">
+          <dt>Languages</dt>
+          <dd>C++, C#, PHP, JavaScript</dd>
+
+          <dt>Web</dt>
+          <dd>HTML5, CSS3, Responsive Design, Accessibility Fundamentals</dd>
+
+          <dt>Back-end &amp; Tools</dt>
+          <dd>ASP.NET, REST API Consumption, SQL, Git/GitHub</dd>
+
+          <dt>Practices</dt>
+          <dd>OOP, Debugging, Clean Code, Unit Testing, Agile/Scrum</dd>
+
+          <dt>Other</dt>
+          <dd>On-page SEO, Semantic HTML, Basic UI/UX Awareness</dd>
+        </dl>
+      </article>
+
+      <article class="message message-assistant reveal" id="contact">
+        <div class="message-meta">
+          <span class="role">Assistant</span>
+          <span class="time">Contact</span>
+        </div>
+        <h2>Let's Work Together</h2>
+        <p>
+          Send a message below or email directly at <a href="mailto:smtusher009@gmail.com">smtusher009@gmail.com</a>.
+        </p>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Hi, I'd like to discuss a project..." required></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Send Message</button>
+            <span id="formStatus" class="form-status" aria-live="polite"></span>
+          </div>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built by S M Tusher Mustakim</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
